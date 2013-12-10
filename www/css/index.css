@@ -1,0 +1,325 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+/*
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+*/
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+.log
+{
+	position: relative;
+	background-color: white;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: solid 1px #aaa;
+	font-size: 0.9em;
+}
+
+.log_date
+{
+	font-style: italic;
+	font-size: 0.8em;
+	color: #aaa;
+}
+
+.log_weather
+{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 0.8em;
+	color: #888;
+}
+
+.log_content
+{
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+.log_picture img
+{
+	width: 80px;
+	border: solid 1px #aaa;
+	opacity: 0.8;
+}
+
+.log_picture img:hover
+{
+	opacity: 1.0;
+}
+
+.log_auto
+{
+	position: relative;
+	margin: 1px;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: dashed 2px #ccc;
+	color: #999;
+	text-shadow: #fff 0px 1px 0px;
+	font-size: 0.9em;
+}
+
+.log_auto:active
+{
+	background-color: #fff;
+	border: dashed 2px #aaa;
+}
+
+.log_auto_icon
+{
+	display: inline-block;
+	background-color: #999;
+	width: 20px;
+	height: 20px;
+}
+
+.log_auto_timestamp
+{
+	display: inline-block;
+	width: 5em;
+	text-align: right;
+	font-size: 0.7em;
+	margin-right: 7px;
+	font-style: italic;
+}
+
+.log_auto_content
+{
+	margin-top: 15px;
+}
+
+.log_delete
+{
+	position: absolute;
+	top: 9px;
+	right: 9px;
+	z-index: 5;
+	cursor: pointer;
+}
+
+.divider_date
+{
+	position: relative;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.divider_date > .divider_line 
+{
+	margin-top: -10px;
+	border-top: solid 1px #bbb;
+	border-bottom: solid 1px #fff;
+	z-index: 5;
+}
+
+.divider_date > .divider_content
+{
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #eee;
+	color: #999;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 1.2em;
+	z-index: 10;
+}
+
+.divider_weather
+{
+	position: relative;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.divider_weather > .divider_line 
+{
+	position: absolute;
+	top: 10px;
+	border-top: solid 1px #ddd;
+	border-bottom: solid 1px #eee;
+	z-index: 5;
+}
+
+.divider_weather > .divider_content
+{
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #eee;
+	color: #999;
+	font-size: 0.9em;
+	z-index: 10;
+}
+
+.divider_timestamp 
+{
+	top: 0px;
+	left: 0px;
+	font-size: 0.7em;
+}
+
+.header_datepicker 
+{
+	width: 60%;
+	margin: 0px auto;
+}
+
+.header_datepicker > div 
+{
+	-webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0) !important;
+	box-shadow: inset 0 0 0 rgba(0,0,0,0) !important;
+	border: 0px;
+	background: rgba(0,0,0,0) !important;
+	margin: 0px !important;
+}
+
+.header_datepicker > div > input 
+{
+	text-align: center;
+	font-weight: bold;
+}
+
+.post_section1
+{
+	
+}
+
+.post_section1_left
+{
+	width: 65%;
+	float: left;
+}
+
+.post_section1_right
+{
+	width: 30%;
+	float: right;
+	text-align: center;
+}
+
+.post_section1_left .ui-input-text 
+{
+	margin: 0px;
+}
+
+.post_section1_right > .loading
+{
+	width: 32px;
+	height: 32px;
+	opacity: 0.2;
+	z-index: 5;
+}
+
+.post_section1_close
+{
+	clear: both;
+}
+
+textarea.ui-input-text
+{
+	height: 200px !important;
+}
+
+#page_post_content .ui-body-c,
+#page_post_content .ui-overlay-c 
+{
+	background-color: white !important;
+}
+
+#page_post_photo_container
+{
+	border: dashed 2px #bbb;
+	padding: 0.5em;
+}
+
+#page_post_photo_container .item_photo
+{
+	width: 80px;
+	height: 80px;
+	background-color: #fff;
+	border: solid 1px #ccc;
+	float: left;
+	margin-right: 4px;
+}
+
+#page_post_photo_container .item_photo > img
+{
+	width: 80px;
+	height: 80px;
+}
+
+#page_post_photo_container div.ui-icon
+{
+	display: inline-block;
+}
+
+#page_post_photo_container .add_photo
+{
+	width: 80px;
+	height: 80px;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 0.8em;
+	color: #999;
+	cursor: pointer;
+}
+
+#page_post_photo_container .item_photo_close
+{
+	clear: both;
+}
+
+#page_imagepopup > img 
+{
+	width: 100%;
+	height: 100%;
+}
